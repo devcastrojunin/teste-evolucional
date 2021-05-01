@@ -1,0 +1,1 @@
+[{"id":1,"ra":12346,"name":"Nome do aluno 1","degreeId":1,"classId":1},{"id":2,"ra":456798,"name":"Nome do aluno 2","degreeId":2,"classId":1},{"id":3,"ra":752156,"name":"Junior Castro","degreeId":3,"classId":2},{"id":4,"ra":852348,"name":"Nome do aluno 4","degreeId":4,"classId":2},{"id":5,"ra":752156,"name":"Jose Maria","degreeId":3,"classId":2}]

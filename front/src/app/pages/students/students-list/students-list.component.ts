@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Classes } from 'src/app/models/classes';
 import { Student } from 'src/app/models/student';
 import { AppService } from 'src/app/services/app.service';
 import { Degrees } from 'src/app/shared/data/Degrees';
-import { Classes } from '../../../shared/data/Classes';
+import { Classes as ClasseJson } from '../../../shared/data/Classes';
 
 @Component({
   selector: 'app-students-list',
@@ -11,26 +12,41 @@ import { Classes } from '../../../shared/data/Classes';
 })
 export class StudentsListComponent implements OnInit {
   students: Student[];
+  classes: Classes[];
 
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
     this.getSudents();
-    this.appService.updateStudent(null);
+    this.getClasses();
   }
 
-  getSudents(){
-    const res = this.appService.getAllStudents();
-    const all = res.map( item => {
-      return {
-        ...item,
-        class: Classes.classes.find( c => c.id == item.classId).name,
-        degree: Degrees.find( d => d.id == item.degreeId).name
-      }
+  async getSudents(){
+    this.appService.getAllStudents().subscribe((res: Student[]) => {     
+      const all = res.map( item => {
+        return {
+          ...item,
+          class: ClasseJson.classes.find( c => c.id == item.classId).name,
+          degree: Degrees.find( d => d.id == item.degreeId).name
+        }
+        
+      })    
       
-    })    
+      this.students = all;
+    });
     
-    this.students = all;
+  }
+
+  async getClasses(){
+    this.appService.getAllClasses().subscribe((res: Classes[]) => {     
+      
+      this.classes = res;
+    });
+    
+  }
+  getStudentByClass(id){
+    console.log(id);
+    this.students = this.students.filter( item => item.classId == id);
   }
 
   updateStudent(student){
