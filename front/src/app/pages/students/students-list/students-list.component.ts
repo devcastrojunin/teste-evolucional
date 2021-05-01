@@ -12,6 +12,7 @@ import { Classes as ClasseJson } from '../../../shared/data/Classes';
 })
 export class StudentsListComponent implements OnInit {
   students: Student[];
+  studentsList: Student[];
   classes: Classes[];
 
   constructor(private appService: AppService) { }
@@ -33,6 +34,7 @@ export class StudentsListComponent implements OnInit {
       })    
       
       this.students = all;
+      this.studentsList = this.students;
     });
     
   }
@@ -44,9 +46,10 @@ export class StudentsListComponent implements OnInit {
     });
     
   }
-  getStudentByClass(id){
-    console.log(id);
-    this.students = this.students.filter( item => item.classId == id);
+  getStudentByFilter(classId, degreeId){
+    console.log('???');
+    
+    this.studentsList = this.students.filter( item => item.classId == classId && item.degreeId == degreeId);
   }
 
   updateStudent(student){
