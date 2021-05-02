@@ -23,6 +23,10 @@ export class AppService {
     const res = this.httpClient.get(`${this.api}students`);
     return res;
   }
+  getStudentById(id){
+    const res = this.httpClient.get(`${this.api}students/${id}`);
+    return res;
+  }
   getAllClasses(){
     const res = this.httpClient.get(`${this.api}classes`);
     return res;
@@ -32,16 +36,15 @@ export class AppService {
     return res;
   }
   updateStudent(student){
-    Students.push({
-      "id":1000,
-      "ra":12,
-      "name":"asdasd",
-      "degreeId":4,
-      "classId":3
-    })
+    const res = this.httpClient.put(`${this.api}students/${student.id}`, student);
+    return res;
   }
   getAllTeachers(){
     return Teachers;
   }
 
+  createStudents(student){
+    const res = this.httpClient.post(`${this.api}students`, student);
+    return res;
+  }
 }

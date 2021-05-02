@@ -5,14 +5,17 @@ não é necessário executar todas as tarefas, o mais interessante é você exec
 não fique batendo cabeça! Você pode começar tanto pela parte 1 quanto pela parte 2.
 
 Como sabe meu amigo, nós trabalhamos com a área de ensino. não sabia? Poxa! 
-Como somos da área de ensino, nosso teste será relacionado a uma situação comum nossa, um digamos, relatório operável (acabei de inventar esse termo eu acho)
+Como somos da área de ensino, nosso teste será relacionado a uma situação comum nossa, um digamos, 
+relatório operável (acabei de inventar esse termo eu acho)
 
 Sobre a tela 1, parte 1: nós precisamos saber quais são nossos alunos e as quais degrees (séries) e classes (classe) o mesmo pertence. 
 E tem aquela coisa, erro de cadastro acontece... Então queremos uma opção de editar os dados dos alunos após vermos os mesmo populados. 
-No nosso caso aqui temos poucos alunos mas vamos supor que essa solução entre em nossa operação, ai teremos muitos alunos, por isso precisamos de filtros.
+No nosso caso aqui temos poucos alunos mas vamos supor que essa solução entre em nossa operação, 
+ai teremos muitos alunos, por isso precisamos de filtros.
 
 Sobre a tela 1, parte 2: Como nós temos poucos dados, queremos simular um cenário mais amplo. 
-Por isso necessitamos de uma ferramenta que gere registros de alunos, mas os registros não podem estar relacionados a só uma turma, eles tem que ser distribuidos. 
+Por isso necessitamos de uma ferramenta que gere registros de alunos, mas os registros não podem estar relacionados a só uma turma, 
+eles tem que ser distribuidos. 
 Não que eu não confie em você mas, seria bacana um gráfico para ver se foram distribuídos aleatoriamente, beleza?
 
 Vamos lá aos requisitos para a tela 1

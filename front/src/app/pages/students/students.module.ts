@@ -13,10 +13,6 @@ const routes: Routes = [
       {
         path: 'edit/:id',
         loadChildren: () => import('./student-edit/student-edit.module').then(m => m.StudentEditModule)
-      },
-      {
-        path: 'details/:id',
-        loadChildren: () => import('./student-details/student-details.module').then(m => m.StudentDetailsModule)
       }
     ]
   }
