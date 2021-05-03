@@ -43,8 +43,10 @@ export class HomeComponent implements OnInit {
   async getSudents() {
     this.appService.getAllStudents().subscribe((res: any[]) => {
       this.students = res; 
-      this.setStudentsChartClass(this.students);
-      this.setStudentsChartDegrees(this.students);
+      setTimeout(() => {
+        this.setStudentsChartClass(this.students);
+        this.setStudentsChartDegrees(this.students);
+      }, 1000);
     });
   }
   
