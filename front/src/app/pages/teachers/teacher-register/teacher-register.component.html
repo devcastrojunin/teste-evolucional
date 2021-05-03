@@ -1,0 +1,60 @@
+<div class="mt-10 sm:mt-0">
+    <form [formGroup]="relationShipForm" (submit)="saveData()">
+        <div class="px-4 mb-10">
+            <a [routerLink]="['/aluno/todos']">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar
+            </a>
+        </div>
+        <div class="overflow-hidden sm:rounded-md">
+            <div class="px-4 py-5 bg-white sm:p-6">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="col-span-1 sm:col-span-1">
+                        <label for="country" class="block text-sm font-medium text-gray-700">Professor</label>
+                        <select name="teacherId"
+                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            formControlName="teacherId">
+                            <option value="">Selecione</option>
+                            <option *ngFor="let teacher of teachers" [value]="teacher.id">{{teacher.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6 mt-5">
+                    <div class="col-span-1 sm:col-span-1">
+                        <label for="matterId" class="block text-sm font-medium text-gray-700">Matéria</label>
+                        <select name="matterId"
+                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            formControlName="matterId">
+                            <option value="">Selecione</option>
+                            <option *ngFor="let matter of matters" [value]="matter.id">{{matter.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6 mt-5">
+                    <div class="col-span-1 sm:col-span-1">
+                        <label for="country" class="block text-sm font-medium text-gray-700">Séries</label>
+                        <div class="mt-2" formArrayName="degrees" *ngFor="let d of degreesFormArray.controls; let i=index">
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" class="form-checkbox" [formControlName]="i">
+                                    <span class="ml-2">{{degreesList[i].name}}</span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- <span *ngFor="let classe of classes" class="ml-6">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" class="form-checkbox" [value]="classe.id">
+                                <span class="ml-2">{{classe.name}}</span>
+                            </label>
+                        </span> -->
+                    </div>  
+                </div>
+                <div class="bg-gray-50 col-span-2 mt-10">
+                    <button type="submit"
+                        class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Salvar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

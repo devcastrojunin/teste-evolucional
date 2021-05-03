@@ -1,27 +1,33 @@
-# TesteEvolucional
+# Teste evolucional Front
+Para solucionar as atividades, esse projeto foi dividido em 2 partes, Front e API.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+## Passo a passo para rodar o projeto
+1-Acesse o diretório /api pelo terminal e execute o comando `npm install` e após a instalação dos pacotes execute o comando `node index.js`;
+2-Acesse o diretório /front pelo terminal e execute o comando `npm install` e após a instalação dos pacotes execute o comando `npm start`;
+
+**Rotas da aplicação:**    
+/home
+/aluno/todos
+/aluno/editar/:id
+/professor/todos
+
+Projeto [demo](http://castrotecnologia.com.br/projetos/teste-evolucional)
+
+## Requirements
+**Node version:** v14.16.0
+**CLI version:** 11.2.8.
+
+## Package angular version
+@angular-devkit/architect    0.1102.8 (cli-only)
+@angular-devkit/core         11.2.8 (cli-only)
+@angular-devkit/schematics   11.2.8 (cli-only)
+@schematics/angular          11.2.8 (cli-only)
+@schematics/update           0.1102.8 (cli-only)
 
 ## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Teste evolucional API
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Requirements
+**Node version:** v14.16.0
