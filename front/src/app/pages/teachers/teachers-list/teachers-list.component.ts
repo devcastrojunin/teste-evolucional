@@ -54,8 +54,13 @@ export class TeachersListComponent implements OnInit {
           degrees: relation.degrees
         });
       })
+
       this.relationShipList = listConcat;
       this.loaderHelper.close();
+
+      let filterData = this.relationShipList;
+      console.log(filterData);
+      
     });
   }
   getDegree(degreeId) {

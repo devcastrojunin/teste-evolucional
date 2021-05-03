@@ -14,39 +14,46 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class TeacherRegisterComponent implements OnInit {
   classes: Classes[];
-  degrees: Degrees[];
+  degreesList: Degrees[];
   teachers: Teacher[];
   matters: Matter[];
   student: Student;
   relationShipForm: FormGroup;
   degreeItems: FormArray;
   
+  
   constructor(private appService: AppService, private fb: FormBuilder) {
     this.relationShipForm = fb.group({
       id: [""],
       teacherId: ["", Validators.required],
       matterId: ["", Validators.required],
-      degrees: this.fb.array([this.createDegreeArray()])
-    });
+      degrees: new FormArray([this.degreeTree()])
+    });    
   }
 
-  createDegreeArray():FormGroup{
+  get degreesFormArray() {
+    return this.relationShipForm.controls.degrees as FormArray;
+  }
+
+  private degreeTree(){
     return this.fb.group({
-      degreeId: null,
+      degreeId: '',
       classes: new FormArray([])
     });
   }
-  
-  addDegree(): void{
-    this.degreeItems = this.relationShipForm.get('degrees') as FormArray;
-    this.degreeItems.push(this.createDegreeArray());
+
+  private addCheckDegrees() {
+    this.degreesList.forEach(() => this.degreesFormArray.push(this.degreeTree()));    
   }
 
   ngOnInit(): void {
     this.getClasses();
     this.getDegrees();
     this.getTeachers();
-    this.getMatters();
+    this.getMatters();  
+    setTimeout(() => {
+      this.addCheckDegrees();
+    }, 1000);      
   }
 
   async getClasses(){
@@ -56,7 +63,7 @@ export class TeacherRegisterComponent implements OnInit {
   }
   async getDegrees(){
     this.appService.getAllDegrees().subscribe((res: Degrees[]) => {           
-      this.degrees = res;
+      this.degreesList = res;
     });    
   }
   async getTeachers() {
@@ -70,40 +77,10 @@ export class TeacherRegisterComponent implements OnInit {
     });
   }
 
-  selectDegreeChange(e) {
-    const checkArray: FormArray = this.relationShipForm.get('degrees') as FormArray;
-
-    if (e.target.checked) {
-      checkArray.push(new FormControl({degreeId: e.target.value}));
-    } else {
-      let i: number = 0;
-      checkArray.controls.forEach((item: FormControl) => {
-        if (item.value == e.target.value) {
-          checkArray.removeAt(i);
-          return;
-        }
-        i++;
-      });
-    }
-  }
-  selectClassChange(e) {
-    const checkArray: FormArray = this.relationShipForm.get('classes') as FormArray;
-
-    if (e.target.checked) {
-      checkArray.push(new FormControl({degreeId: e.target.value}));
-    } else {
-      let i: number = 0;
-      checkArray.controls.forEach((item: FormControl) => {
-        if (item.value == e.target.value) {
-          checkArray.removeAt(i);
-          return;
-        }
-        i++;
-      });
-    }
-  }
-
   saveData(){
-    console.log(this.relationShipForm.value);    
+    const selectedOrderIds = this.relationShipForm.value.degrees
+      .map((checked, i) => checked ? this.degreesList[i].id : null)
+      .filter(v => v !== null);
+    console.log(selectedOrderIds);       
   }
 }

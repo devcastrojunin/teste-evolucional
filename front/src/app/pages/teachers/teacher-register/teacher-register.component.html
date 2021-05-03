@@ -32,20 +32,20 @@
                 <div class="grid grid-cols-2 gap-6 mt-5">
                     <div class="col-span-1 sm:col-span-1">
                         <label for="country" class="block text-sm font-medium text-gray-700">Séries</label>
-                        <div class="mt-2" *ngFor="let d of degrees; let i=index">
+                        <div class="mt-2" formArrayName="degrees" *ngFor="let d of degreesFormArray.controls; let i=index">
                             <div>
                                 <label class="inline-flex items-center">
-                                    <input type="checkbox" class="form-checkbox" [value]="d.id" (change)="selectDegree($event)">
-                                    <span class="ml-2">{{d.name}}</span>
+                                    <input type="checkbox" class="form-checkbox" [formControlName]="i">
+                                    <span class="ml-2">{{degreesList[i].name}}</span>
                                 </label>
                             </div>
-                            <span *ngFor="let classe of classes" class="ml-6">
-                                <label class="inline-flex items-center">
-                                    <input type="checkbox" class="form-checkbox" [value]="classe.id">
-                                    <span class="ml-2">{{classe.name}}</span>
-                                </label>
-                            </span>
                         </div>
+                        <!-- <span *ngFor="let classe of classes" class="ml-6">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" class="form-checkbox" [value]="classe.id">
+                                <span class="ml-2">{{classe.name}}</span>
+                            </label>
+                        </span> -->
                     </div>  
                 </div>
                 <div class="bg-gray-50 col-span-2 mt-10">
