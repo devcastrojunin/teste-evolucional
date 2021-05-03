@@ -1,0 +1,14 @@
+.classes-list{
+    span + span{
+        border-left: 1px solid rgb(190, 190, 190);
+    }
+}
+.link-click{
+    display: inline-block;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover{
+        text-decoration: none;
+    }
+}
