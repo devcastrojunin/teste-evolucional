@@ -1,22 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StudentsListComponent } from './students-list.component';
+import { TeacherRegisterComponent } from './teacher-register.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
     path: '',
-    component: StudentsListComponent
+    component: TeacherRegisterComponent
   }
 ];
 
 @NgModule({
-  declarations: [StudentsListComponent],
+  declarations: [
+    TeacherRegisterComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    NgxPaginationModule
+    ReactiveFormsModule
   ]
 })
-export class StudentsListModule { }
+export class TeacherRegisterModule { }

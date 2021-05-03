@@ -34,17 +34,24 @@ Aeee! Você terminou a parte 1? Ah é, tem a possibilidade de ter começado por 
 
 Sobre a tela 2 parte 1: 
 	Na tela 1 queriamos saber a respeito dos nossos alunos, agora queremos saber a respeito dos nossos professores. 
-	É bem parecido. Precisamos saber quem são, em que degrees (série) dão aula, em que classes (classe) dão aula e alám disso, ter uma opçãozinha que ao clicarmos, magicamente tr�s os alunos relacionados aquela série. Como sempre, precisamos dos filtrinhos.
+	É bem parecido. 
+	Precisamos saber quem são, em que degrees (série) dão aula, em que classes (classe) dão aula e alám disso, 
+	ter uma opçãozinha que ao clicarmos, magicamente trás os alunos relacionados aquela série. Como sempre, precisamos dos filtrinhos.
 
 Sobre a tela 2 
 	## parte 2: 
-	'Agora vem o pulo do gato. Estamos vendo a telinha e tal, beleza, bacana, todos os professores ali! não! não? não estáo, falta um registro! Por isso precisamos de um formulário que gere um novo registro para a relationships e exiba no contexto da parte 1. 
+	'Agora vem o pulo do gato. Estamos vendo a telinha e tal, beleza, bacana, todos os professores ali! não! não? não estáo, falta um registro! 
+	Por isso precisamos de um formulário que gere um novo registro para a relationships e exiba no contexto da parte 1. 
 
 Vamos lá aos requisitos para a tela 2
 
 ## Parte 1
 	- Criar combo filtro a base dos JSONs 'degrees','classes'
-	- Popular a tela utilizando o JSON relationships. Nessa tela será necess�ria a visualiza��o os seguintes itens:nome do professor, nome da materia, todos os nomes dos degrees relacionados, todos os nomes de classe de cada class relacionada ao degree
-	- Criar botão que ao clicar, tr�s os students relacionados ao degree em questáo
+	- Popular a tela utilizando o JSON relationships. Nessa tela será necessária a visualização os seguintes itens:
+		-nome do professor, 
+	  	-nome da materia, 
+		-todos os nomes dos degrees relacionados, 
+		-todos os nomes de classe de cada class relacionada ao degree
+	- Criar botão que ao clicar, trás os students relacionados ao degree em questão
 ## Parte 2 
-	- Criar formulário para gerar um novo registro do relationships. O registro deverá ser passivel as opera��es da parte 1 da tela 2
+	- Criar formulário para gerar um novo registro do relationships. O registro deverá ser passivel as operações da parte 1 da tela 2

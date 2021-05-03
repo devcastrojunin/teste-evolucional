@@ -1,25 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TeachersEditComponent } from './teachers-edit.component';
 import { RouterModule, Routes } from '@angular/router';
-
-import { HomeComponent } from './home.component';
-import { ChartsModule } from 'ng2-charts';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: TeachersEditComponent
   }
 ];
 
+
 @NgModule({
   declarations: [
-    HomeComponent
+    TeachersEditComponent
   ],
   imports: [
-    RouterModule.forChild(routes),
     CommonModule,
-    ChartsModule
+    RouterModule.forChild(routes)
   ]
 })
-export class HomeModule { }
+export class TeachersEditModule { }

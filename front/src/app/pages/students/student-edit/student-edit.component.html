@@ -1,5 +1,10 @@
 <div class="mt-10 sm:mt-0">
     <form [formGroup]="studentForm" (submit)="saveData()">
+        <div class="px-4 mb-10">
+            <a [routerLink]="['/aluno/todos']">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar
+            </a>
+        </div>
         <div class="overflow-hidden sm:rounded-md">
             <div class="px-4 py-5 bg-white sm:p-6">
                 <div class="grid grid-cols-4 gap-6">

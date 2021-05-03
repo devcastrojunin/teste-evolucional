@@ -19,8 +19,20 @@ export class AppService {
 
   constructor(private httpClient: HttpClient) { }
 
+  getAllRelationships(){
+    const res = this.httpClient.get(`${this.api}relationships`);
+    return res;
+  }
+  getAllTeachers(){
+    const res = this.httpClient.get(`${this.api}teachers`);
+    return res;
+  }
   getAllStudents(){
     const res = this.httpClient.get(`${this.api}students`);
+    return res;
+  }
+  getStudentsByFilter(data){
+    const res = this.httpClient.post(`${this.api}students/students-by-filter`, data);
     return res;
   }
   getStudentById(id){
@@ -35,16 +47,16 @@ export class AppService {
     const res = this.httpClient.get(`${this.api}degrees`);
     return res;
   }
+  getAllMatters(){
+    const res = this.httpClient.get(`${this.api}matters`);
+    return res;
+  }
   updateStudent(student){
     const res = this.httpClient.put(`${this.api}students/${student.id}`, student);
     return res;
   }
-  getAllTeachers(){
-    return Teachers;
-  }
-
-  createStudents(student){
-    const res = this.httpClient.post(`${this.api}students`, student);
+  createStudents(studentList){
+    const res = this.httpClient.post(`${this.api}students`, studentList);
     return res;
   }
 }

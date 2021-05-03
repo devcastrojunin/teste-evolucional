@@ -7,11 +7,11 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: 'all',
+        path: 'todos',
         loadChildren: () => import('./students-list/students-list.module').then(m => m.StudentsListModule)
       },
       {
-        path: 'edit/:id',
+        path: 'editar/:id',
         loadChildren: () => import('./student-edit/student-edit.module').then(m => m.StudentEditModule)
       }
     ]
