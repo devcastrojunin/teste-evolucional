@@ -29,9 +29,6 @@ Projeto [demo](http://castrotecnologia.com.br/projetos/teste-evolucional)
 @schematics/angular          11.2.8 (cli-only)
 @schematics/update           0.1102.8 (cli-only)
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
 # Teste evolucional API
 
 ## Requirements
