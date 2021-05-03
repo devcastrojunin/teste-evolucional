@@ -85,7 +85,7 @@ export class StudentEditComponent implements OnInit {
         text: 'Dados atualizados!',
         icon: 'success',
       }).then(data => {
-        this.router.navigate(['/students/all']);
+        this.router.navigate(['/aluno/todos']);
       });    
     });  
   }

@@ -101,7 +101,8 @@ export class HomeComponent implements OnInit {
       turma12.length,
       turma13.length
     ]
-    this.chart.chart.update()
+    this.chart.chart.update();
+    
   }
   async getClasses() {
     this.appService.getAllClasses().subscribe((res: any[]) => {

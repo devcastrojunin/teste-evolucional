@@ -68,7 +68,10 @@
                                 <table>
                                     <tr *ngFor="let degree of teacher.degrees">
                                         <td class="text-sm text-gray-900 py-2 whitespace-nowrap">
-                                            {{getDegree(degree.degreeId).name}}
+                                            {{getDegree(degree.degreeId).name}} - 
+                                            <span class="link-click" (click)="openModal('custom-modal-1', {degreeId: degree.degreeId, name: getDegree(degree.degreeId).name})">
+                                                Alunos <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                            </span>
                                             <div class="classes-list mt-1">
                                                 <strong class="text-sm text-gray-600">Aulas: </strong>
                                                 <span *ngFor="let classe of degree.classes" class="px-1.5">
@@ -79,11 +82,6 @@
                                     </tr>
                                 </table>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">    
-                                <a [routerLink]="['/professor/editar/', teacher.id]" class="text-indigo-600 hover:text-indigo-900 text-lg">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                                </a>
-                            </td>
                         </tr>
 
                         <!-- More people... -->
@@ -93,3 +91,32 @@
         </div>
     </div>
 </div>
+
+
+
+<app-modal id="custom-modal-1">
+    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div class="sm:flex sm:items-start">
+            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                    Todos os alunos de: <i><u>{{degreeDataModal.name}}</u></i>
+                </h3>
+                <div class="mt-2 ml-3">
+                    <ul class="list-none md:list-disc">
+                        <li *ngIf="students?.length == 0">Nenhum aluno matriculado</li>
+                        <li 
+                            [id]="student.id" 
+                            *ngFor="let student of students">{{student.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <button type="button"
+            (click)="closeModal('custom-modal-1');"
+            class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-blue-500 hover:bg-blue-600 hover:shadow-lg">
+            FECHAR
+        </button>
+    </div>
+</app-modal>

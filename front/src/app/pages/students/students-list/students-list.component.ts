@@ -74,7 +74,6 @@ export class StudentsListComponent implements OnInit {
   async studentGenerator() {
     this.loaderHelper.show();
     let lastId = this.lastIdStudent[0].id;
-    console.log('lastId: ', lastId);
 
     let listNewStudents = [];
 
