@@ -1,6 +1,7 @@
 # Teste evolucional Front
 Para solucionar as atividades, esse projeto foi dividido em 2 partes, Front e API.
 
+O Framework css utilizado no front da aplicação foi o Tailwind.
 ## Passo a passo para rodar o projeto
 1-Acesse o diretório /api pelo terminal e execute o comando `npm install` e após a instalação dos pacotes execute o comando `node index.js`;
 
