@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartOptions, ChartType } from 'chart.js';
 import { BaseChartDirective, Label } from 'ng2-charts';
+import { LoaderHelper } from 'src/app/helpers/loaderHelper';
 import { Classes } from 'src/app/models/classes';
 import { Degrees } from 'src/app/models/degrees';
 import { AppService } from 'src/app/services/app.service';
@@ -11,6 +12,7 @@ import { AppService } from 'src/app/services/app.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  loaderHelper: LoaderHelper = new LoaderHelper();
   classes: Classes[];
   degrees: Degrees[];
   students: any[];
@@ -41,11 +43,13 @@ export class HomeComponent implements OnInit {
   }
   
   async getSudents() {
+    this.loaderHelper.show();
     this.appService.getAllStudents().subscribe((res: any[]) => {
       this.students = res; 
       setTimeout(() => {
         this.setStudentsChartClass(this.students);
         this.setStudentsChartDegrees(this.students);
+        this.loaderHelper.close();
       }, 1000);
     });
   }
