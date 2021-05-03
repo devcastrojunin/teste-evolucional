@@ -46,4 +46,3 @@ testem.log
 .DS_Store
 Thumbs.db
 front/dist/
-front/dist/teste-evolucional/index.html
