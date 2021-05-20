@@ -47,3 +47,4 @@ testem.log
 Thumbs.db
 front/dist/
 rest-api-evolucional
+node_modules
