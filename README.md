@@ -3,9 +3,7 @@ Para solucionar as atividades, esse projeto foi dividido em 2 partes, Front e AP
 
 O Framework css utilizado no front da aplicação foi o Tailwind.
 ## Passo a passo para rodar o projeto
-1-Acesse o diretório /api pelo terminal e execute o comando `npm install`, após a instalação dos pacotes execute o comando `node index.js`;
-
-2-Acesse o diretório /front pelo terminal e execute o comando `npm install`, após a instalação dos pacotes execute o comando `npm start`;
+Acesse o diretório pelo terminal e execute o comando `npm install`, após a instalação dos pacotes execute o comando `npm start`;
 
 **Rotas da aplicação:**    
 /home
